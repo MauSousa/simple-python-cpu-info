@@ -10,16 +10,29 @@ def check_proxies():
     return f'Proxy: {proxy}'
 
 
+def write_info_to_file(hostname, ip, mac, proxy):
+    filename = 'pc_info.txt'
+    with open(filename, "w") as file:
+        file.write("Hostname: ")
+        file.write(hostname)
+        file.write("\n")
+        file.write("Ip address: ")
+        file.write(ip)
+        file.write("\n")
+        file.write("Mac address: ")
+        file.write(mac)
+        file.write("\n")
+        file.write(proxy)
+    print(f'Todos los datos están en el archivo {filename}')
+
+
 def get_cpu_info():
     hostname = gethostname()
     mac_address = get_mac_address()
     ip_address = gethostbyname(hostname)
     proxy = check_proxies()
 
-    print(f'Hostname is: {hostname}')
-    print(f'Ip Address is: {ip_address}')
-    print(f'Mac Address is: {mac_address}')
-    print(f'{proxy}')
+    write_info_to_file(hostname, ip_address, mac_address, proxy)
 
 
 if __name__ == "__main__":
