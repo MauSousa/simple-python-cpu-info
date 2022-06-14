@@ -1,0 +1,3 @@
+# CPU INFO
+
+Simple python script to get hostname, ip address, mac address and proxies, for now...
