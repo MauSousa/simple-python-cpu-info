@@ -10,6 +10,7 @@ def check_proxies():
     return f'Proxy: {proxy}'
 
 
+# TODO: Change this for a better way
 def write_info_to_file(hostname, ip, mac, proxy):
     filename = 'pc_info.txt'
     with open(filename, "w") as file:
